@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const fastify = require("fastify")({ logger: true });
+const fastifyStatic = require("fastify-static");
 
 fastify.register(require("point-of-view"), {
   engine: {
@@ -10,8 +11,14 @@ fastify.register(require("point-of-view"), {
 
 fastify.register(require("fastify-markdown"), { src: true });
 
-fastify.register(require("fastify-static"), {
+fastify.register(fastifyStatic, {
   root: path.join(__dirname, "../public"),
+});
+
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, "../workspace"),
+  prefix: "/workspace/",
+  decorateReply: false, // the reply decorator has been added by the first plugin registration
 });
 
 // Main Route
@@ -97,6 +104,10 @@ fastify.get("/exercise/:exerciseId", async (request, reply) => {
     script,
     link,
   });
+});
+
+fastify.get("/workspace", function (req, reply) {
+  reply.sendFile("index.html", path.join(__dirname, "../workspace")); // overriding the options disabling cache-control headers
 });
 
 // Run the server!

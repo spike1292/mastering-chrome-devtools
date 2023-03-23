@@ -2,7 +2,7 @@
 
 ## Instructions
 
-1. Kill the current Node process running this app.
+1. Open <http://localhost:3000/workspace/>
 1. Open the DevTools
 1. Click on the Sources panel
 1. Open Windows Explorer / Finder and navigate to this project
@@ -13,4 +13,4 @@
 
 ## Finished?
 
-When you're done here, start up the node server again and head to the [next lesson](/lesson/Debugging)
+When you're done here head to the [next lesson](/lesson/Debugging)

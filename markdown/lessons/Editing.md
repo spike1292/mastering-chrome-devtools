@@ -47,7 +47,7 @@ The sources tab is best for debugging more complex problems. It's much easier to
 
 ## Workspaces
 
-Limitations (from [Chrome DevTools Official Docs](https://developers.google.com/web/tools/chrome-devtools/workspaces#limitations))
+Limitations (from [Chrome DevTools Official Docs](https://developer.chrome.com/docs/devtools/workspaces/#limitations))
 
 Chrome DevTools Workspaces allow you to configure an application so that all of the changes you make to the **Sources** or **Elements** tab persist to disk. This means you could theoretically use Chrome DevTools as your primary IDE.
 
